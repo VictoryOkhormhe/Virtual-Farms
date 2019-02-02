@@ -1,0 +1,71 @@
+.body{
+	width:45%;
+	border:2px solid gray;
+	border-radius:10px;
+	padding:30px;
+}
+.logo{
+	width:220px;
+	height:50px;
+}
+.title{
+    padding-top:15px;
+    padding-bottom:10px;
+	font-family:tahoma;
+	font-size:26px;
+	font-weight:bold;
+}
+.inputs{
+	padding-bottom:15px;
+}
+.field{
+	border-radius:5px;
+	width:100%;
+	font-family:tahoma;
+	padding-left:10px;
+	padding-right:10px;
+	padding-top:5px;
+	padding-bottom:5px;
+	border:2px solid gray;
+	font-size:21px;
+	box-shadow:inset 1px 1px 1px lightgray;
+}
+.pass-confirm{
+	font-family:candara;
+	font-size:20px;
+	font-weight:bold;
+	font-style:italic;
+	white-space:pre-wrap;
+}
+.pass-verify{
+	font-family:candara;
+	font-size:20px;
+	font-weight:bold;
+	font-style:italic;
+	white-space:pre-wrap;
+}
+.submit{
+  border-radius:5px;
+  border:0;
+  padding-right:10px;
+  padding-right:10px;
+  padding-top:3px;
+  padding-bottom:3px;
+  background-color:green;
+  color:white;
+  cursor:hand;
+  font-family:candara;
+  font-weight:bold;
+  border:2px solid green;
+  box-shadow:inset 1px 1px 1px gray;
+  font-size:24px;
+  font-style:italic;
+}
+#con{
+	padding-bottom:15px;
+}
+@media(max-width:700px){
+   .body{
+    width:80vw;
+   }
+}

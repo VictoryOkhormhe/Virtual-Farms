@@ -1,0 +1,565 @@
+<html><head><link rel="shortcut icon" href="icon.png"><title>Virtual Farms | Home</title></head>
+<script src="jquery-3.3.1.min.js"></script>
+<meta name="viewport" content="width=device-width,initial-scale=0.4">
+<meta name="description" content="">
+<link rel="stylesheet" href="index.css">
+<script src="index.js" type="text/javascript"></script>
+<style>
+.menu-bar{
+  background-color:rgba(34,177,76,0.6);
+  width:100%;
+  padding-top:20px;
+  padding-bottom:20px;
+  height:90px;
+  position:absolute;
+  top:0px;
+}
+.login-pad{
+  position:absolute;width:100%;height:100%;background-color:rgba(0,0,0,0.7);
+  visibility:hidden;
+  opacity:0;
+  transition:1s;
+  z-index:11;
+}
+.login-contents{
+  border-radius:15px;
+  visibility:hidden;
+  width:55%;
+  padding-top:10px;
+  padding-bottom:40px;
+  padding-left:40px;
+  padding-right:40px;
+  position:absolute;
+  top:8vh;
+  left:20.5%;
+  background-color:white;
+  opacity:0;
+  transition:1s;
+  z-index:11;
+}
+.login-credentials{
+  width:100%;
+}
+.fonts{
+  font-size:25px;
+  font-weight:bold;
+  font-family:candara;
+}
+.title{
+  font-family:candara;
+  font-size:40px;
+  font-weight:bold;
+  color:green;
+}
+.error{
+  font-family:candara;
+  font-weight:bold;
+  color:red;
+  font-size:20px;
+  font-style:italic;
+  text-align:center;
+}
+.credentials{
+  padding-left:8px;
+  padding-right:8px;
+  border-radius:5px;
+  padding-top:4px;
+  width:100%;
+  padding-bottom:4px;
+  font-family:tahoma;
+  font-size:20px;
+  border:1px solid lightgray;
+  box-shadow:inset 1px 1px 1px 1px gray;
+}
+.close{
+  text-align:right;
+}
+.close-btn{
+  background-color:transparent;
+  border:0;
+  font-size:40px;
+  text-shadow:gray 2px 2px;
+  cursor:hand;
+  color:maroon;
+}
+.how-it-works{
+  width:40vw;
+  height:25vw;
+  border-radius:10px;
+}
+.social{
+  width:40px;
+  height:40px;
+  border-radius:10px;
+}
+.logo{
+  width:250px;
+  height:50px;
+}
+.grid-images{
+  width:28vw;
+  height:23vw;
+}
+.grid-images1{
+  width:28vw;
+  height:23vw;
+  border-top-left-radius:30px;
+}
+.grid-images2{
+  width:28vw;
+  height:23vw;
+  border-top-right-radius:30px;
+}
+.grid-images3{
+  width:28vw;
+  height:23vw;
+  border-bottom-left-radius:30px;
+}
+.grid-images4{
+  width:28vw;
+  height:23vw;
+  border-bottom-right-radius:30px;
+}
+.sign-in{
+	background-color:green;
+	padding-left:15px;
+	padding-right:15px;
+	padding-top:10px;
+	padding-bottom:10px;
+	border-radius:25px;
+	font-family:tahoma;
+	font-size:20px;
+	cursor:hand;
+	font-weight:bold;
+	color:white;
+	border:2px solid white;
+}
+.sign-up{
+	background-color:white;
+	padding-left:15px;
+	padding-right:15px;
+	padding-top:10px;
+	padding-bottom:10px;
+	border-radius:25px;
+	font-family:tahoma;
+	font-size:20px;
+	cursor:hand;
+	font-weight:bold;
+	color:green;
+	border:2px solid white;
+}
+.footer-tab{
+	position:relative;
+	top:200px;
+	padding-top:20px;
+	padding-bottom:20px;
+	width:100%;
+	background-color:black;
+}
+.srch-box{
+	width:80%;
+	font-family:tahoma;
+	font-size:22px;
+    padding:6px;
+    border-radius:8px;
+    border:2px solid gray;
+}
+.srch-button{
+	cursor:hand;
+	background-color:green;
+	border-radius:8px;
+	border:0px;
+	font-size:25px;
+	color:white;
+	padding-left:15px;
+	padding-right:15px;
+	padding-top:5px;
+	padding-bottom:5px;
+	text-shadow:gray 2px 2px;
+}
+.get-started{
+	background-color:green;
+	cursor:hand;
+	text-shadow:gray 2.1px 2.1px;
+	border-radius:10px;
+	border:0px;
+	font-size:25px;
+	color:white;
+	padding-left:18px;
+	padding-right:18px;
+	padding-top:8px;
+	padding-bottom:8px;
+	transition:1.2s;
+}
+.get-started:hover{
+    	background-color:lightgreen;
+	cursor:hand;
+	text-shadow:gray 2.1px 2.1px;
+	border-radius:5px;
+	border:0px;
+	font-size:25px;
+	color:white;
+	padding-left:18px;
+	padding-right:18px;
+	padding-top:8px;
+	padding-bottom:8px
+	opacity:0.9
+}
+.int-container{
+  white-space:pre-wrap;
+  text-align:right;
+  padding-left:40px;
+  padding-right:25px;
+}
+.overlay{
+  padding-top:40px;
+  position:absolute;
+  top:0;
+  width:100%;
+  height:655px;
+  text-align:center
+  white-space:pre-wrap;
+}
+.info{
+ text-align:left;
+ white-space:pre-wrap;
+ font-size:45px;
+ font-weight:bold;
+ font-family:arial;
+ color:white;
+ text-shadow:gray 2.2px 2.2px;
+}
+.tab{
+  width:100%;
+  height:700px;
+}
+.txt-holder{
+ height:70px;
+ text-align:center;
+}
+.back{
+  width:100%;
+  height:655px;
+  opacity:0.9;
+}
+.menu-bar-top{
+  padding-left:30px;
+  background-color:transparent;
+  width:100%;
+  padding-top:20px;
+  padding-bottom:20px;
+  height:100%;
+  position:absolute;
+  top:0px;
+}
+.page-body{
+  position:absolute;
+  top:0;
+  width:100%;
+  height:100%;
+  overflow-y:auto;
+}
+.log{
+  text-align:center;
+  padding-top:15px;
+}
+.signin{
+  border-radius:5px;
+  border:0;
+  padding-right:10px;
+  padding-right:10px;
+  padding-top:3px;
+  padding-bottom:3px;
+  background-color:green;
+  color:white;
+  font-family:candara;
+  font-weight:bold;
+  border:2px solid green;
+  box-shadow:inset 1px 1px 1px gray;
+  font-size:25px;
+  font-style:italic;
+  cursor:hand;
+}
+.dha{
+ padding-top:15px;
+ text-align:center;
+ font-family:candara;
+ font-weight:bold;
+ font-size:23px;
+}
+.drop{
+    font-size:0;
+    visibility:hidden;
+    font-family;tahoma;
+    color:white;
+    background-color:transparent;
+    font-weight:bold;
+    border:0;
+    cursor:hand;
+}
+.drop:hover{
+    color:lemonchiffon;
+}
+    @media(max-width:800px){
+        .drop{
+            font-size:35px;
+            visibility:visible;
+        }
+        .how{
+            font-size:0px;
+           width:0;
+           height:0;
+           visibility:hidden;
+        }
+        .sign-in{
+           font-size:0px;
+           width:0;
+           height:0;
+           visibility:hidden;
+        }
+        .sign-up{
+            font-size:0px;
+           width:0;
+           height:0;
+           visibility:hidden;
+        }
+        .logo{
+            height:50px;
+            width:200px;
+        }
+        .how-it-works{
+            width:80vw;
+            height:45vw;
+        }
+    }
+</style>
+<body style="margin:0">
+<div class="page-body" onscroll="scheck()" id="scr">
+<table class="tab" cellspacing="0" cellpadding="0">
+<tr><td class="img-holder"><img alt="Virtual Farms logo" class="back" src="images/scape.jpg"></td></tr>
+<tr><td class = "txt-holder">
+<form action="Results.php" method="post">
+<input type="text" class="srch-box" placeholder="Enter plant name e.g cassava, maize, tomato" name="search" oninput="window.location = 'Search.php'"> <button type="submit" class="srch-button" name="submit">Search</button>
+</form>
+</td></tr>
+</table>
+<table class="overlay">
+	<tr><td class="info">
+<center><font color="lemonchiffon" size="7">Plant From Anywhere</font></center><font size="5">
+<center>Choose a Crop and let Our Bot
+do the Planting for you</center></font>
+<center><button class="get-started" onclick="window.location='Create Account.php'">Get Started</button></center>
+</td></tr>
+</table>
+<center><table style="padding-top:50px" cellspacing="10" cellpadding="10">
+  <tr>
+    <td>
+	  <a href="Search.php#f1"><img src="images/fruit1.jpg" class="grid-images1"></a>
+	</td>
+	<td>
+	  <a href="Search.php#f2"><img src="images/fruit2.jpg" class="grid-images"></a>
+	</td>
+	<td>
+	  <a href="Search.php#f3"><img src="images/fruit3.jpg" class="grid-images2"></a>
+	</td>
+  </tr>
+  <tr>
+    <td>
+	  <a href="Search.php#f4"><img src="images/fruit4.jpg" class="grid-images"></a>
+	</td>
+	<td>
+	  <a href="Search.php#f5"><img src="images/fruit5.jpg" class="grid-images"></a>
+	</td>
+	<td>
+	  <a href="Search.php#f6"><img src="images/fruit6.jpg" class="grid-images"></a>
+	</td>
+  </tr>
+  <tr>
+    <td>
+	  <a href="Search.php#f7"><img src="images/fruit7.jpg" class="grid-images3"></a>
+	</td>
+	<td>
+	  <a href="Search.php#f8"><img src="images/fruit8.jpg" class="grid-images"></a>
+	</td>
+	<td>
+	  <a href="Search.php#f9"><img src="images/fruit9.jpg" class="grid-images4"></a>
+	</td>
+  </tr>
+ </table>
+ <p align="center" id="video" style="padding-top:30px">
+ 	<h1><font face="tahoma" color="green">Watch How it Works</font></h1>
+ </p>
+ <p align="center"><video controls preload="none" class="how-it-works">
+   <source src="business.mp4" type="video/mp4" class="how-it-works">
+</video></p>
+ <table class="footer-tab" style="padding-left:30px">
+ 	<tr>
+ 		<td style="width:30%">
+          <div style="width:100%"><table>
+          	<tr>
+              <td>
+              	<a href="index.html"><button style="background-color:transparent;border:0;cursor:hand;padding-bottom:20px"><b><font face="candara" size="5" color="white">Home</b></button></a></font>
+              </td>
+            </tr>
+            <tr>
+              <td>
+              	<a href="Our Team.html"><button style="background-color:transparent;border:0;cursor:hand;padding-bottom:20px"><b><font face="candara" size="5" color="white">Our Team</b></button></a></font>
+              </td>
+            </tr>
+            <tr>
+              <td>
+              	<a href="#"><button style="background-color:transparent;border:0;cursor:hand;padding-bottom:20px"><b><font face="candara" size="5" color="white">Terms and Conditions</b></button></a></font>
+              </td>
+            </tr>
+            <tr>
+              <td>
+              	<a href="About Us.html"><button style="background-color:transparent;border:0;cursor:hand"><b><font face="candara" size="5" color="white">About Us</b></button></a></font>
+              </td>
+            </tr>
+          </table></div>
+ 		</td>
+ 		<td style="white-space:pre-wrap;text-align:center">
+ 			<button style="background-color:transparent;border:0;cursor:hand;padding-bottom:20px" onclick="window.location='https://www.facebook.com/virtualfarmz/'"><img src="images/F.PNG" class="social" ></button></a>    <a href="#"><button style="background-color:transparent;border:0;cursor:hand;padding-bottom:20px"><img src="images/I.PNG" class="social"></button></a>    <a href="#"><button style="background-color:transparent;border:0;cursor:hand;padding-bottom:20px"><img src="images/T.PNG" class="social"></button></a>    <a href="#"><button style="background-color:transparent;border:0;cursor:hand;padding-bottom:20px"><img src="images/W.PNG" class="social"></button></a>  
+ 		</td>
+ 		<tr><td colspan="2" style="padding-right:30px"><marquee style="padding-top:10px;font-weight:bold;font-size:20px;font-family:candara;color:white;width:100%">Thanks for visiting our site. We hope to hear from you soon. Copyright &copy; 2019</marquee></td>
+ </table>
+</center>
+</div>
+</body>
+<div class="menu-bar" id="menu">
+<table class="menu-bar-top" id="menu2">
+<tr><td style="width:250px"><img src="virtual.png" class="logo"></td><td class="int-container"><a href="#video"><button style="background-color:transparent;border:0;cursor:hand" class="how"><b><font face="candara" size="5" color="white">How it Works  </b></button></a>   </font><button class="sign-in" onclick="document.getElementById('login').style.visibility='visible';document.getElementById('login2').style.visibility='visible';fun();vis()">SIGN IN</button>   <button class="sign-up" onclick="window.location = 'Create Account.php'">SIGN UP</button> <button class="drop" onclick="slide()">&#9776;</button></td></tr>
+</table></div>
+<script>
+  function fun(){
+    $("#error").html("");
+    $(".credentials").val = "";
+  }
+  $(document).ready(function(){
+    $("#signin").click(function(){
+       var username = $("#username").val();
+       var password = $("#password").val();
+       if (username !== "" || password != ""){
+          $.ajax({
+             url:"Validate.php",
+             method:"POST",
+             data:{username:username,password:password},
+             success:function(data){
+               if (data == "yes"){
+                window.location = "Dashboard.php";
+               }
+               else{
+                $("#error").html("Invalid email address or password!");
+               }
+             }
+          });
+       }
+       else{
+          $("#error").html("No fields must be left blank!");
+       }
+    })
+  })
+</script>
+<div class="login-pad" id="login" onclick="this.style.visibility='hidden';document.getElementById('login2').style.visibility='hidden'">
+  </div>
+  <div class="login-contents" id="login2">
+    <center><table class="login-credentials">
+      <tr><td class="close"><button class="close-btn" onclick="document.getElementById('login').style.visibility='hidden';document.getElementById('login2').style.visibility='hidden';invis();">&times;</button></td></tr>
+      <tr><td class="title"><em>Login</em></td></tr>
+      <tr><td><hr></hr></td></tr>
+      <tr><td class="error" id="error"></td></tr>
+      <tr><td style="padding-top:20px" class="fonts">Email or Phone Number</td></tr>
+      <tr><td style="padding-bottom:10px"><input type="text" id="username" class="credentials"></td>
+      <tr><td class="fonts">Password</td></tr>
+      <tr><td><input type="password" id="password" class="credentials"></td></tr>
+      <tr><td class="log"><input type="button" id="signin" class="signin" value="Login"></td></tr>
+      <tr><td class="dha"><em>Don't have an Account? </em><a href="Create Account.php"><font color="cornflowerblue">Register Now!</font></a></td></tr>
+    </table>
+    </center>
+   </div>
+   <style>
+       .close-button{
+        background-color:transparent;
+        border:0;
+        font-size:45px;
+        text-shadow:gray 2px 2px;
+        cursor:hand;
+        color:white;
+       }
+       .close-button:hover{
+         color:lemonchiffon;
+       }
+       .options{
+         color:white;
+         border-bottom:5px solid white;
+         padding-bottom:10px;
+         width:100%;
+         white-space:pre-wrap;
+         cursor:hand;
+         font-family:candara;
+         font-weight:bold;
+         font-size:25px;
+       }
+       .options:hover{
+          color:lemonchiffon;
+          border-bottom:5px solid lemonchiffon;
+       }
+       #slideout{
+         position:absolute;
+         background-color:green;
+         top:0px;
+         z-index:10;
+         width:60vw;
+         height:100%;
+         left:-60vw;
+         transition:1.5s;
+         opacity:0;
+       }
+   </style>
+   <script>
+       var t = 0;
+       function slide(){
+          var sl = document.getElementById("slideout");
+          if (t==0){
+             sl.style.opacity="1";
+             sl.style.left="0px";
+             t=1;
+          }
+          else{
+             sl.style.opacity="0";
+             sl.style.left="-60vw";
+             t=0; 
+          }
+       }
+       function slidein(){
+           var sl = document.getElementById("slideout");
+           sl.style.opacity="0";
+           sl.style.left="-60vw";
+           t=0;
+       }
+   </script>
+   <div id="slideout">
+       <p align="right"><button class="close-button" onclick="slidein()">&times;</button></p>
+       <p class="options" onclick="window.location='index.html#video'">    How it Works</p></a>
+       <p class="options" onclick="document.getElementById('login').style.visibility='visible';document.getElementById('login2').style.visibility='visible';fun();vis()">    Sign in</p>
+       <p class="options" onclick="window.location='Create Account.php'">    Sign Up</p></a>
+   </div>
+   <style>
+       #anim{
+           animation-name:wriggle;
+           animation-duration:0.8s;
+           animation-iteration-count:infinite;
+       }
+       @keyframes wriggle{
+           from{
+               position:absolute;
+               bottom:10px;
+           }
+           to{
+               position:absolute;
+               bottom:20px;
+           }
+       }
+   </style>
+   <img src="chat.png" title="Meet our AI Agent" id="anim" style="box-shadow:1px 1px 10px 4px gray;left:30%;position:absolute;bottom:10px;height:80px;border-radius:50%;width:80px;cursor:hand" onclick="window.location='Virtual Farm.html'">
+</html>
